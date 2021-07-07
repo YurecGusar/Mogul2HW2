@@ -10,7 +10,7 @@ namespace Shopping
     {
         public void Run()
         {
-            Console.WriteLine("Run");
+            Console.WriteLine("Run в новой ветке");
         }
     }
 }
