@@ -8,9 +8,10 @@ namespace Shopping
 {
     public class Starter
     {
+        private ProductProvider _productProvider = new ProductProvider();
         public void Run()
         {
-            Console.WriteLine("Run в новой ветке");
+            var products = _productProvider.Init();
         }
     }
 }
