@@ -9,25 +9,14 @@ namespace Shopping
     public class ProductProvider
     {
         private Product[] _products;
+        private int _quantity = (int)ProdNames.EndOfProdNames + 1;
         public ProductProvider()
         {
-            _products = new Product[16];
-           /* Init();*/
+            _products = new Product[_quantity];
         }
 
         public Product[] Init()
         {
-            /*var minCost = 10;
-            var maxCost = 100;
-            int numOfProd;
-            ProdNames prodName;
-            var endOfProdNames = (int)ProdNames.EndOfProdNames;
-            for (var i = 0; i < _products.Length; i++)
-            {
-                numOfProd = new Random().Next(0, endOfProdNames);
-                prodName = (ProdNames)numOfProd;
-                _products[i] = new Product { Name = prodName.ToString(), Cost = new Random().Next(minCost, maxCost) };
-            }*/
             var minCost = 10;
             var maxCost = 100;
             _products[0] = new Product { Name = ProdNames.Apple.ToString(), Cost = new Random().Next(minCost, maxCost) };
