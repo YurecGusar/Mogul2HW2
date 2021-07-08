@@ -8,7 +8,8 @@ namespace Shopping
 {
     public class User
     {
-        public string Name { get; set; }
+        public string FirstName { get; set; }
+        public string SecondName { get; set; }
         public string Phone { get; set; }
         public string Mail { get; set; }
     }

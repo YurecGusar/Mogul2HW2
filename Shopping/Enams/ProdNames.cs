@@ -16,5 +16,6 @@ internal enum ProdNames
     Pineapple,
     Strawberry,
     Blueberry,
+    Watermelon,
     EndOfProdNames
 }

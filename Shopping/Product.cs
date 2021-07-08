@@ -9,6 +9,6 @@ namespace Shopping
     public class Product
     {
         public string Name { get; set; }
-        public int Cost { get; set; }
+        public double Cost { get; set; }
     }
 }

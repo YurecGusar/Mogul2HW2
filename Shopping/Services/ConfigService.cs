@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Shopping
 {
@@ -14,12 +10,12 @@ namespace Shopping
             Init();
         }
 
-        public NumOfProducts Config => _config.Num;
+        public CartConfig CartConfig => _config.Num;
         private void Init()
         {
             _config = new Config
             {
-                Num = new NumOfProducts
+                Num = new CartConfig
                 {
                     Size = 10
                 }

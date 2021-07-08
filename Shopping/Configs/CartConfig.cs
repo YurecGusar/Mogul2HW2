@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Shopping
 {
-    public class NumOfProducts
+    public class CartConfig
     {
         public int Size { get; set; }
     }
