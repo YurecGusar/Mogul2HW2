@@ -20,7 +20,6 @@ namespace Shopping
 
         public static Cart Instance => _instance;
         public Product[] Product { get; set; }
-        public User User { get; set; }
         public int NumberOfProduct { get; set; }
     }
 }

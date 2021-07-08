@@ -9,31 +9,31 @@ namespace Shopping
     public class CartService
     {
         private static readonly CartService _instance = new CartService();
-        private User _user = new User();
-        private Cart _cart = Cart.Instance;
-        private ProductProvider _productProvider = new ProductProvider();
-        private ConfigService _configService = new ConfigService();
-        private int _size;
+        private Cart _cart;
+        private ProductProvider _productProvider;
+        private ConfigService _configService;
+        private int _maxSize;
         static CartService()
         {
         }
 
         private CartService()
         {
-            _size = _configService.CartConfig.Size;
-            _cart.Product = new Product[_size];
+            _configService = new ConfigService();
+            _productProvider = new ProductProvider();
+            _cart = Cart.Instance;
+            _maxSize = _configService.CartConfig.Size;
+            _cart.Product = new Product[_maxSize];
+            _cart.NumberOfProduct = 0;
         }
 
         public static CartService Instance => _instance;
         public void Add(int id)
         {
-            if (id <= _size)
+            if (_cart.NumberOfProduct <= _maxSize)
             {
-                _cart.Product[id] = _productProvider.Products[id];
-            }
-            else
-            {
-                Console.WriteLine($"Кол-во допустимых товаров к добавлению в корзину не должно быть больше {_size}");
+                _cart.Product[_cart.NumberOfProduct] = _productProvider.Products[id];
+                _cart.NumberOfProduct++;
             }
         }
     }
