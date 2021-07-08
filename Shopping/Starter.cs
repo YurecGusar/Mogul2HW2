@@ -1,18 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Shopping.Services;
 
 namespace Shopping
 {
     public class Starter
     {
-        private const int _size = 5;
         private User _user;
         private Cart _cart = Cart.Instance;
-        private CartService _cartService = CartService.Instance;
-        private ProductProvider _productProvider = new ProductProvider();
+        private CartService _cartService = new CartService();
+        private OrderService _orderService = new OrderService();
         public Starter()
         {
             _user = new User
@@ -26,7 +22,8 @@ namespace Shopping
 
         public void Run()
         {
-            for (var i = 0; i < _size; i++)
+            const int addedProducts = 6;
+            for (var i = 0; i < addedProducts; i++)
             {
                 _cartService.Add(i);
             }
@@ -35,6 +32,8 @@ namespace Shopping
             {
                 Console.WriteLine($"{_cart.Product[i].Name} {_cart.Product[i].Cost} ");
             }
+
+            _orderService.GetOrder(_user);
         }
     }
 }
